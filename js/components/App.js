@@ -6,6 +6,10 @@ class App extends React.Component {
     super(props);
   }
 
+  tester() {
+    return 1;
+  }
+
   render() {
     return (
       <div></div>
