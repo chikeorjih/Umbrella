@@ -1,18 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Address from './Address';
 
 class App extends React.Component {
   constructor(props){
     super(props);
   }
 
-  tester() {
-    return 1;
-  }
-
   render() {
     return (
-      <div></div>
+      <div className="content">
+        <Address/>
+      </div>
     );
   }
 }

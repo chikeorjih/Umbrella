@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import assert from 'assert';
 import sinon from 'sinon';
-import TestUtils from 'react-addons-test-utils';
-import ShallowTestUtils from 'react-shallow-testutils';
+import * as ShallowTestUtils from 'react-shallow-testutils';
 import App from '../../components/App';
+import Address from '../../components/Address';
 
 describe('App', () => {
   let sandbox;
@@ -17,14 +17,13 @@ describe('App', () => {
     sandbox.restore();
   });
 
+  describe('render', () => {
+    it('renders address component', () => {
+      let testObject = new App;
+      let result = testObject.render();
+      let AddressComponent = ShallowTestUtils.findAllWithType(result, Address);
 
-  describe('tester', () => {
-    it('retuns a value', () => {
-
-      let testObject = new App();
-      let number = testObject.tester();
-
-      assert.equal(number, 2, 'good stuff');
+      assert.strictEqual(AddressComponent.length, 1, 'Address component was rendered');
     });
   });
 });
